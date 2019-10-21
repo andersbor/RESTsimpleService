@@ -46,7 +46,7 @@ steps:
     azureSubscription: 'Microsoft Imagine(edaa3574-d80b-4170-9ad2-f9b619fb3f91)'
     appType: 'webApp'
     appName: 'anbo-simpleRest'
-    package: '$(System.DefaultWorkingDirectory)/**/*.dll'
+    package: '$(System.DefaultWorkingDirectory)/**/simpleRESTservice.dll'
     deploymentMethod: 'auto'
     
 
