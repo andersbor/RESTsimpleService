@@ -23,12 +23,6 @@ steps:
     zipAfterPublish: true
 
 #- task: VSTest@2
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    appType: 'webApp'
-    WebAppName: 
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 #  inputs:
 #    testSelector: 'testAssemblies'
 #    testAssemblyVer2: |
@@ -53,4 +47,7 @@ steps:
     appName: 'anbo-simpleRest'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
     deploymentMethod: 'auto'
+    
+
+
 
