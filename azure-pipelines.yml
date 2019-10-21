@@ -30,17 +30,15 @@ steps:
 #      !**\obj\**
 #    searchFolder: '$(System.DefaultWorkingDirectory)'
 #    package: $(System.ArtifactsDirectory)/**/*.zip    
+- task: CopyFiles@2
+  inputs:
+    Contents: '**'
+    TargetFolder: '$(System.DefaultWorkingDirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-
-- task: CopyFiles@2
-  inputs:
-    Contents: '**'
-    TargetFolder: '$(System.DefaultWorkingDirectory)'
-
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'Microsoft Imagine(edaa3574-d80b-4170-9ad2-f9b619fb3f91)'
