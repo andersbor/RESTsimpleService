@@ -46,7 +46,8 @@ steps:
     azureSubscription: 'Microsoft Imagine(edaa3574-d80b-4170-9ad2-f9b619fb3f91)'
     appType: 'webApp'
     appName: 'anbo-simpleRest'
-    package: 'D:\a\1\s\simpleRESTservice\bin\Release\netcoreapp2.1\simpleRESTservice.dll'
+    #package: 'D:\a\1\s\simpleRESTservice\bin\Release\netcoreapp2.1\simpleRESTservice.dll'
+    package: 'D:\a\1\a\simpleRESTservice.dll'
     deploymentMethod: 'auto'
     
 
