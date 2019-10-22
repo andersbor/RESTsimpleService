@@ -48,7 +48,8 @@ steps:
     appName: 'anbo-simpleRest'
     #package: 'D:\a\1\s\simpleRESTservice\bin\Release\netcoreapp2.1\simpleRESTservice.dll'
     package: 'D:\a\1\a\simpleRESTservice.dll'
-    deploymentMethod: 'auto'
+    #deploymentMethod: 'auto'
+    deploymentMethod: runFromPackage
     
 
 
