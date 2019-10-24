@@ -36,21 +36,33 @@ steps:
   inputs:
     Contents: '**'
     TargetFolder: '$(System.DefaultWorkingDirectory)'
+# - task: PublishBuildArtifacts@1
+#   inputs:
+#     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+#     ArtifactName: 'drop'
+#     publishLocation: 'Container'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
-    publishLocation: 'Container'
-- task: AzureWebApp@1
+    publishLocation: 'FilePath'
+# - task: AzureWebApp@1
+#   inputs:
+#     azureSubscription: 'Microsoft Imagine(edaa3574-d80b-4170-9ad2-f9b619fb3f91)'
+#     appType: 'webApp'
+#     appName: 'anbo-simpleRest'
+#     #package: 'D:\a\1\s\simpleRESTservice\bin\Release\netcoreapp2.1\simpleRESTservice.dll'
+#     package: 'D:\a\1\a\simpleRESTservice.dll'
+#     #deploymentMethod: 'auto'
+#     deploymentMethod: runFromPackage
+    
+- task: AzureRmWebAppDeployment@4
   inputs:
+    ConnectionType: 'AzureRM'
     azureSubscription: 'Microsoft Imagine(edaa3574-d80b-4170-9ad2-f9b619fb3f91)'
     appType: 'webApp'
-    appName: 'anbo-simpleRest'
-    #package: 'D:\a\1\s\simpleRESTservice\bin\Release\netcoreapp2.1\simpleRESTservice.dll'
-    package: 'D:\a\1\a\simpleRESTservice.dll'
-    #deploymentMethod: 'auto'
-    deploymentMethod: runFromPackage
-    
-
+    WebAppName: 'anbo-simpleRest'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 
 
